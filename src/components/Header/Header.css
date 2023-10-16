@@ -1,0 +1,17 @@
+.header {
+  background-color: blue;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger div {
+  width: 2.1rem;
+  height: 0.15rem;
+  margin: 0.4rem;
+  background-color: black;
+  transition: all 0.34s ease-in;
+}
