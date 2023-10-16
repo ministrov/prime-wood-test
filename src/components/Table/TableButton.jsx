@@ -1,9 +1,8 @@
 import './Table.css';
 
-function TableButton({ className }) {
-
+function TableButton({ className, onClick }) {
   return (
-    <button className={className}>New item</button>
+    <button className={className} onClick={onClick}>New item</button>
   )
 }
 
