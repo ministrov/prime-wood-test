@@ -1,6 +1,26 @@
-#root {
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+.container {
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.shadow-wrapper {
   padding: 2rem;
-  text-align: center;
+}
+
+@media  screen and (max-width: 798px) {
+  .shadow-wrapper {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
