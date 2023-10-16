@@ -5,10 +5,12 @@ import './App.css';
 function App() {
 
   return (
-    <main>
+    <main style={{ display: 'flex', minHeight: '100vh', alignItems: 'center'}}>
       <div className="container">
-        <Header />
-        <Table />
+        <div className="shadow-wrapper">
+          <Header />
+          <Table />
+        </div>
       </div>
     </main>
   )
