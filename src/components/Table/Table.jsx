@@ -1,8 +1,7 @@
 import TableButton from './TableButton';
 import './Table.css';
 
-function TableMain() {
-
+function TableMain({ setIsOpen }) {
   return (
     <div className="table-wrapper">
       <table className="table">
@@ -37,7 +36,7 @@ function TableMain() {
           </tr>
         </tbody>
       </table>
-      <TableButton className={'table-btn'} onClick={() => console.log('Clicked')}/>
+      <TableButton className={'table-btn'} onClick={() => setIsOpen(true)}/>
     </div>
   )
 }
