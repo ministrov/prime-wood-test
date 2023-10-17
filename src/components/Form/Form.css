@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 6rem;
+  margin: 0 auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: tomato;
+}
+
+.form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 1rem;
+}
+
+.form__row label {
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.form__btn_close {
+  background-color: lightgray;
+}
+
+.form__btn_add {
+  background-color: tomato;
+}
+
+.form__btn-block {
+  align-items: flex-end;
+}
