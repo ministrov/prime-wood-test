@@ -21,7 +21,7 @@ function App() {
           <Header />
           <Table  setIsOpen={setIsOpen}/>
           <Modal open={isOpen} onClose={onCloseHandler}>
-            <header style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid lightgray', paddingLeft: '1rem'}}>
+            <header style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid lightgray', paddingLeft: '1rem', paddingRight: '1rem' }}>
               <h2>New Item</h2>
               <button onClick={onCloseHandler}>X</button>
             </header>
