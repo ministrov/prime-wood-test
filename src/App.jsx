@@ -14,6 +14,10 @@ function App() {
     if (target) setIsOpen(false);
   }
 
+  const addItem = (item) => {
+    console.log(item);
+  }
+
   return (
     <main style={{ display: 'flex', minHeight: '100vh', alignItems: 'center', justifyContent: 'center'}}>
       <div className="container">
@@ -25,7 +29,7 @@ function App() {
               <h2>New Item</h2>
               <button onClick={onCloseHandler}>X</button>
             </header>
-            <Form/>
+            <Form onSumbit={addItem} onClose={onCloseHandler}/>
           </Modal>
         </div>
       </div>
