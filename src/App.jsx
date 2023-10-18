@@ -1,12 +1,15 @@
 import { useState } from 'react';
+import { useLocalStorage } from './hooks/use-localstorage.hook';
 import Header from './components/Header/Header';
 import Table from './components/Table/Table';
 import Modal from './components/Modal/Modal';
-import './App.css';
 import Form from './components/Form/Form';
+import './App.css';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [items, setItems] = useLocalStorage('data');
+  const [selectedItem, setSelectedItem] = useState({});
 
   const onCloseHandler = (event) => {
     const target = event.target;
@@ -16,6 +19,8 @@ function App() {
 
   const addItem = (item) => {
     console.log(item);
+    setItems(items)
+    console.log(setSelectedItem);
   }
 
   return (
@@ -29,7 +34,7 @@ function App() {
               <h2>New Item</h2>
               <button onClick={onCloseHandler}>X</button>
             </header>
-            <Form onSumbit={addItem} onClose={onCloseHandler}/>
+            <Form onSumbit={addItem} onClose={onCloseHandler} data={selectedItem}/>
           </Modal>
         </div>
       </div>

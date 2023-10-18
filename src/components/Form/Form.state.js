@@ -14,6 +14,11 @@ export const INITIAL_STATE = {
 
 export function formReducer(state, action) {
   switch(action.type) {
+    case 'SET_VALUE':
+      return {
+        ...state,
+        values: { ...state.values, ...action.payload }
+      };
     case 'SUBMIT': {
       const titleValidity = state.values.title?.trim().length;
       const priceValidity = state.values.price?.trim().length;
@@ -27,7 +32,7 @@ export function formReducer(state, action) {
           date: dateValidity
         },
         isFormReadyToSubmit: titleValidity && priceValidity && dateValidity
-      }
+      };
     }
   }
 }
