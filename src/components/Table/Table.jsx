@@ -1,7 +1,7 @@
 import TableButton from './TableButton';
 import './Table.css';
 
-function TableMain({ setIsOpen }) {
+function Table({ setIsOpen }) {
   return (
     <div className="table-wrapper">
       <table className="table">
@@ -41,4 +41,4 @@ function TableMain({ setIsOpen }) {
   )
 }
 
-export default TableMain;
+export default Table;

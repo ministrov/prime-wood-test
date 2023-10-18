@@ -34,8 +34,12 @@ tbody .table__head {
   width: 100%;
   max-width: 280px;
   margin-top: auto;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: inherit;
   color: white;
   background-color: red;
+  border-radius: 8px;
 }
 
 .table-btn:hover,
