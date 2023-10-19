@@ -1,61 +1,22 @@
-import { useReducer, useEffect } from 'react';
-import { INITIAL_STATE, formReducer } from './Form.state';
+import InputRow from '../InputRow/InputRow';
 import './Form.css';
 
-function Form({ onClose, onSumbit, data }) {
-
-  const [formState, dispatchForm] = useReducer(formReducer, INITIAL_STATE);
-  const { isValid, values, isFormReadyToSubmit} = formState;
-
-  useEffect(() => {
-    dispatchForm({ type: 'SET_VALUE', payload: { ...data } });
-  }, [data]);
+function Form({ onClose, onSumbit }) {
 
   const addItem = (event) => {
     event.preventDefault();
-
-    console.log(isValid);
-    console.log(values);
-    console.log(isFormReadyToSubmit);
-
-    dispatchForm({ type: 'SUBMIT' });
   }
 
   const onChange = (event) => {
-    dispatchForm({ type: 'SET_VALUE', payload: { [event.target.name]: event.target.value } });
+    console.log(event.target.name);
   };
 
 
   return (
     <form className="form" action="#" onSubmit={onSumbit}>
-      <div className="form__row">
-        <label htmlFor="title">
-          <span>Title</span>
-        </label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          onChange={onChange}
-          value={values.title}
-          required
-        />
-      </div>
-
-      <div className="form__row">
-        <label htmlFor="price">
-          <span>Price</span>
-        </label>
-        <input type="number" name="price" id="price" onChange={onChange} value={values.price} required />
-      </div>
-
-      <div className="form__row">
-        <label htmlFor="date">
-          <span>Date and Time</span>
-        </label>
-        <input type="text" name="date" id="date" onChange={onChange} value={values.date} required />
-      </div>
-
+      <InputRow label={'Title'} onChange={onChange} />
+      <InputRow label={'Price'} type='number' onChange={onChange} />
+      <InputRow label={'Date and Time'} onChange={onChange} />
 
       <div className="form__btn-block">
         <button className="form__btn_close" onClick={onClose}>close</button>
