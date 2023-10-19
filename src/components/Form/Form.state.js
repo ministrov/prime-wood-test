@@ -19,6 +19,11 @@ export function formReducer(state, action) {
         ...state,
         values: { ...state.values, ...action.payload }
       };
+    case 'RESET_VALIDITY':
+      return {
+        ...state,
+        isValid: INITIAL_STATE.isValid
+      };
     case 'SUBMIT': {
       const titleValidity = state.values.title?.trim().length;
       const priceValidity = state.values.price?.trim().length;

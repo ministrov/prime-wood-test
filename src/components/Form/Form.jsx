@@ -32,7 +32,14 @@ function Form({ onClose, onSumbit, data }) {
         <label htmlFor="title">
           <span>Title</span>
         </label>
-        <input type="text" name="title" id="title" onChange={onChange} value={values.title} required/>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          onChange={onChange}
+          value={values.title}
+          required
+        />
       </div>
 
       <div className="form__row">
