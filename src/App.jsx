@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { useLocalStorage } from './hooks/use-localstorage.hook';
 import Header from './components/Header/Header';
 import Table from './components/Table/Table';
 import Modal from './components/Modal/Modal';
-import './App.css';
 import Form from './components/Form/Form';
+import './App.css';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [items, setItems] = useLocalStorage('data');
 
   const onCloseHandler = (event) => {
     const target = event.target;
@@ -14,8 +16,10 @@ function App() {
     if (target) setIsOpen(false);
   }
 
-  const addItem = (item) => {
-    console.log(item);
+  const addItem = (event) => {
+    console.log(items, setItems);
+    const formData = new FormData(event.target);
+    console.log(Object.fromEntries(formData.entries()));
   }
 
   return (
