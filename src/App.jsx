@@ -9,7 +9,6 @@ import './App.css';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [items, setItems] = useLocalStorage('data');
-  const [selectedItem, setSelectedItem] = useState({});
 
   const onCloseHandler = (event) => {
     const target = event.target;
@@ -17,10 +16,10 @@ function App() {
     if (target) setIsOpen(false);
   }
 
-  const addItem = (item) => {
-    console.log(item);
-    setItems(items)
-    console.log(setSelectedItem);
+  const addItem = (event) => {
+    console.log(items, setItems);
+    const formData = new FormData(event.target);
+    console.log(Object.fromEntries(formData.entries()));
   }
 
   return (
@@ -34,7 +33,7 @@ function App() {
               <h2>New Item</h2>
               <button onClick={onCloseHandler}>X</button>
             </header>
-            <Form onSumbit={addItem} onClose={onCloseHandler} data={selectedItem}/>
+            <Form onSumbit={addItem} onClose={onCloseHandler}/>
           </Modal>
         </div>
       </div>

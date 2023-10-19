@@ -8,15 +8,15 @@ function Form({ onClose, onSumbit }) {
   }
 
   const onChange = (event) => {
-    console.log(event.target.name);
+    console.log(event.target.value);
   };
 
 
   return (
     <form className="form" action="#" onSubmit={onSumbit}>
-      <InputRow label={'Title'} onChange={onChange} />
-      <InputRow label={'Price'} type='number' onChange={onChange} />
-      <InputRow label={'Date and Time'} onChange={onChange} />
+      <InputRow label={'Title'} name={'title'} onChange={onChange} placeholder={'Title'}/>
+      <InputRow label={'Price'} name={'price'} type='number' onChange={onChange} placeholder={'Price'}/>
+      <InputRow label={'Date and Time'} name={'date'} onChange={onChange} placeholder={'Date and Time'}/>
 
       <div className="form__btn-block">
         <button className="form__btn_close" onClick={onClose}>close</button>
